@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  patch 'differentiate/*polynomio', to: 'differentiate#derive'
+  get 'differentiate/*polynomio', to: 'differentiate#differentiate'
 end

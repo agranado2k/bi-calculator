@@ -12,31 +12,29 @@ module BI
         exp = pol.size - i - 1
         r << n*exp
       end
-
       r.pop
-      while !r.empty? && r.last.zero? do
-        r.pop
-      end
-
       r
     end
 
     # Polynomio -> Stirng
     # produce the string representation for the polynomio
     def polynomio_to_s(pol)
-      r = []
+      r = ''
       pol.each_with_index do |n, i|
         next if n.zero?
+        r += (n > 0 ? ' + ' : ' - ') if !i.zero?
+        n *= -1 if n < 0
         exp = pol.size - i - 1
         if exp.zero?
-          r << n.to_s
+          r += n.to_s
         elsif exp == 1
-          r << "#{n}x"
+          r += "#{n}x"
         else
-          r << "#{n}x^#{exp}"
+          r += "#{n}x^#{exp}"
         end
+
       end
-      r.join(' + ')
+      r
     end
   end
 end

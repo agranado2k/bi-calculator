@@ -32,6 +32,15 @@ RSpec.describe BI::Calculator, type: :model do
 
       it { expect(subject).to eq(str) }
     end
+
+    context '[12, -10, 0] => 12x^2 - 10x' do
+      let(:polynomio) { [12, -10, 0] }
+      let(:str) { '12x^2 - 10x' }
+
+      subject { described_class.new.polynomio_to_s(polynomio) }
+
+      it { expect(subject).to eq(str) }
+    end
   end
 
   describe 'derive_polynomio' do
@@ -55,7 +64,7 @@ RSpec.describe BI::Calculator, type: :model do
 
     context '[4, 3, 0, 1] => [12, 6]' do
       let(:polynomio) { [4, 3, 0, 1] }
-      let(:result) { [12, 6] }
+      let(:result) { [12, 6, 0] }
 
       subject { described_class.new.derive_polynomio(polynomio) }
 
@@ -64,7 +73,7 @@ RSpec.describe BI::Calculator, type: :model do
 
     context '[4, -5, 0, 1] => [12, -10]' do
       let(:polynomio) { [4, -5, 0, 1] }
-      let(:result) { [12, -10] }
+      let(:result) { [12, -10, 0] }
 
       subject { described_class.new.derive_polynomio(polynomio) }
 
