@@ -34,6 +34,50 @@ RSpec.describe BI::Calculator, type: :model do
     end
   end
 
-  describe 'derive_polynomio'
+  describe 'derive_polynomio' do
+    context '[4, 3, 2, 1] => [12, 6, 2]' do
+      let(:polynomio) { [4, 3, 2, 1] }
+      let(:result) { [12, 6, 2] }
 
+      subject { described_class.new.derive_polynomio(polynomio) }
+
+      it { expect(subject).to eq(result) }
+    end
+
+    context '[3, 2, 1] => [6, 2]' do
+      let(:polynomio) { [3, 2, 1] }
+      let(:result) { [6, 2] }
+
+      subject { described_class.new.derive_polynomio(polynomio) }
+
+      it { expect(subject).to eq(result) }
+    end
+
+    context '[4, 3, 0, 1] => [12, 6]' do
+      let(:polynomio) { [4, 3, 0, 1] }
+      let(:result) { [12, 6] }
+
+      subject { described_class.new.derive_polynomio(polynomio) }
+
+      it { expect(subject).to eq(result) }
+    end
+
+    context '[4, -5, 0, 1] => [12, -10]' do
+      let(:polynomio) { [4, -5, 0, 1] }
+      let(:result) { [12, -10] }
+
+      subject { described_class.new.derive_polynomio(polynomio) }
+
+      it { expect(subject).to eq(result) }
+    end
+
+    context '[] => []' do
+      let(:polynomio) { [] }
+      let(:result) { [] }
+
+      subject { described_class.new.derive_polynomio(polynomio) }
+
+      it { expect(subject).to eq(result) }
+    end
+  end
 end

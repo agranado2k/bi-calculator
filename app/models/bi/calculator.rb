@@ -1,10 +1,28 @@
 # frozen_string_literal: true
 
-#Class that has operation on polynomios
+# Class that has operation on polynomios
 module BI
   class Calculator
-    #Polynomio -> Stirng
-    #produce the string representation for the polynomio
+
+    # Polynomio -> Polynomio
+    # produce the differiatial (f'(x)) from f(x)
+    def derive_polynomio(pol)
+      r = []
+      pol.each_with_index do |n, i|
+        exp = pol.size - i - 1
+        r << n*exp
+      end
+
+      r.pop
+      while !r.empty? && r.last.zero? do
+        r.pop
+      end
+
+      r
+    end
+
+    # Polynomio -> Stirng
+    # produce the string representation for the polynomio
     def polynomio_to_s(pol)
       r = []
       pol.each_with_index do |n, i|
