@@ -1,0 +1,65 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/agranado/Projects/board_intelligence/calculator/app/controllers/differentiate_controller.rb": [
+        1,
+        1,
+        4,
+        null,
+        4,
+        4,
+        null,
+        4,
+        null,
+        null
+      ],
+      "/Users/agranado/Projects/board_intelligence/calculator/app/controllers/application_controller.rb": [
+        1,
+        null
+      ],
+      "/Users/agranado/Projects/board_intelligence/calculator/app/models/bi/calculator.rb": [
+        null,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        9,
+        9,
+        29,
+        29,
+        null,
+        9,
+        9,
+        null,
+        null,
+        null,
+        null,
+        1,
+        8,
+        8,
+        22,
+        17,
+        17,
+        17,
+        17,
+        4,
+        13,
+        7,
+        null,
+        6,
+        null,
+        null,
+        null,
+        8,
+        null,
+        null,
+        null
+      ]
+    },
+    "timestamp": 1536526388
+  }
+}
